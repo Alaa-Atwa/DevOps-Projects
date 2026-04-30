@@ -63,20 +63,6 @@ Navigate to any project directory and follow its README instructions.
 
 ---
 
-## 📈 Progression
-
-This repository is organized to reflect a learning path:
-
-1. Fundamentals (Bash, Networking)
-2. Containerization (Docker)
-3. Orchestration (Kubernetes)
-4. Infrastructure as Code (Terraform)
-5. Cloud (AWS)
-6. CI/CD (GitHub Actions)
-7. Monitoring & Logging (Prometheus, Grafana, Elasticsearch)
-
----
-
 ## 🤝 Contribution
 
 This is a personal learning repository, but suggestions and improvements are always welcome.
