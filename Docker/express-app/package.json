@@ -1,0 +1,19 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "simple express-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon index.js"
+  },
+  "author": "Alaa-Atwa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
