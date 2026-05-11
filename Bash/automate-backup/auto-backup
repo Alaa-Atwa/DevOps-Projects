@@ -1,0 +1,30 @@
+#!/usr/bin/env bash 
+
+# you can use nfs or backup to a remote directory.
+
+#Vars
+backup_source="./project"
+remote="/tmp/backup"    # add your remote backup server here.
+current_date=$(date +%Y-%m-%d)
+logs="/tmp/backup/logs"   # add your logs directory here.
+previous_files="/tmp/backup/previous_files/$current_date"  # retain old versions of files for rolling back situations.
+
+# Creating required directories 
+mkdir -p "$previous_files"
+mkdir -p "$logs"
+
+# backup and sync files 
+echo "starting backup..."
+sleep 1
+# using a demo for what will happen first using dry-run option..."
+# rsync -av --delete --backup --dry-run --backup-dir="$previous_files" "$backup_source" "$remote"
+rsync -av --delete --backup --backup-dir="$previous_files" "$backup_source" "$remote"
+
+if [[ $? == 0 ]]; then 
+  echo "completed backup.."
+else 
+  echo "Error: backup  not completed"
+fi 
+
+# add the healthcheck.io hook here :
+
