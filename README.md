@@ -6,15 +6,18 @@ This repository is a collection of hands-on DevOps projects covering core concep
 
 ## Content 
 
-**Networking**
+Each directory contains multiple projects focused on a specific technology or domain.
+
+
+**1.Networking**
 
 [mini-production-environment](./Networking/mini-production-environment/): networking lab built using Cisco Packet Tracer to simulate a simple production-like environment
 
-**bash** 
+**2.bash** 
 
 [healthy-server](./Bash/healthy-server/): system info reporter
 
-**Docker**
+**3.Docker**
 
 [express-app](./Docker/express-app/): simple express-app with docker-compose applied 
 
@@ -27,42 +30,6 @@ The goal of this repository is to:
 * Build strong foundational knowledge in DevOps
 * Apply concepts through real-world projects
 * Develop production-ready skills
-
----
-
-## 🧰 Technologies & Topics Covered
-
-* Linux & Bash Scripting
-* Networking Fundamentals
-* Docker (Containerization)
-* Kubernetes (Container Orchestration)
-* AWS (Cloud Infrastructure)
-* Terraform (Infrastructure as Code)
-* GitHub Actions (CI/CD)
-* Prometheus & Grafana (Monitoring)
-* Elasticsearch (Logging & Search)
-
----
-
-## 📁 Repository Structure
-
-```
-DevOps-Projects/
-│
-├── bash/
-├── networking/
-├── docker/
-├── kubernetes/
-├── terraform/
-├── aws/
-├── github-actions/
-├── monitoring/
-│   ├── prometheus/
-│   └── grafana/
-├── elasticsearch/
-```
-
-Each directory contains multiple projects focused on a specific technology or domain.
 
 ---
 
