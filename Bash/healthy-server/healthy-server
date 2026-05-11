@@ -1,0 +1,76 @@
+#!/usr/bin/env bash 
+
+# a script that takes a list of servers from a file and check if they are up and running well using SSH.
+
+# strict mode 
+set -euo pipefail
+
+usage() {
+  echo "Usage: ./$0 -f <list-of-servers-file> -u <remote-user>"
+  exit 1
+}
+
+user=""
+file=""
+
+# parse arguments 
+
+while [[ $# -gt 0 ]]; do 
+  case "$1" in 
+    -f | --file)
+      shift 
+      [[ $# -eq 0 ]] && { echo "error: missing value for -f"; usage; }
+      file="$1"
+      ;;
+    -u | --user)
+      shift 
+      [[ $# -eq 0 ]] && { echo "error: missing value for -u"; usage; }
+      user="$1"
+      ;;
+    --)
+      shift 
+      break
+      ;;
+    -*)
+      echo "error: unknown option: $1 "
+      usage 
+      ;;
+    *)
+      break 
+      ;;
+  esac 
+  shift 
+done 
+
+# Validate inputs 
+[[ -z "$file" ]] && { echo "error: server file is required"; usage ;}
+[[ -z "$user" ]] && { echo "error: user is required"; usage ;}
+[[ ! -f "$file" ]] && { echo "error: file is not found: $file "; exit 1 ;}
+
+# reading servers file 
+echo "---------------------------------------------"
+echo "Reading servers from: $file"
+sleep 1
+echo "using user: $user"
+sleep 1
+echo "---------------------------------------------"
+
+# while read works OR we still have leftover data -> keep looping
+while IFS= read -r server || [[ -n "$server" ]]; do 
+  # skip empty lines and comments 
+  [[ "$server" =~ ^[[:space:]]*$ || "$server" =~ ^[[:space:]]*# ]] && continue
+  
+  echo "Processing: $server"
+
+  echo "Checking server: ... $server"
+  sleep 1
+
+  echo "ssh $user@$server"
+  if ssh -o ConnectTimeout=5 "$user@$server" ; then
+    sleep 1
+    echo "$server: success" 
+  else 
+    echo "$server failed"
+  fi 
+echo "---------------------------------------------"
+done < "$file"

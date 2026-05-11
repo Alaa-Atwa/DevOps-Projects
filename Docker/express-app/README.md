@@ -52,7 +52,7 @@ docker run -d -p 4000:4000 --name express-container express-app
 
 Open your browser and go to:
 
-```
+```bash
 http://localhost:4000
 # or simply inside the terminal $> curl http://localhost:4000
 ```
@@ -61,7 +61,7 @@ You should see the app running.
 
 ---
 
-##  Stop or remove the Container
+## Stop or remove the Container
 
 ```bash
 docker stop express-container
@@ -69,4 +69,3 @@ docker rm express-container
 ```
 
 ---
-

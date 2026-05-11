@@ -4,6 +4,22 @@ This repository is a collection of hands-on DevOps projects covering core concep
 
 ---
 
+## Content 
+
+**Networking**
+
+[mini-production-environment](./Networking/mini-production-environment/): networking lab built using Cisco Packet Tracer to simulate a simple production-like environment
+
+**bash** 
+
+[healthy-server](./Bash/healthy-server/): system info reporter
+
+**Docker**
+
+[express-app](./Docker/express-app/): simple express-app with docker-compose applied 
+
+---
+
 ## 🎯 Objective
 
 The goal of this repository is to:
