@@ -1,0 +1,36 @@
+#!/usr/bin/env bash 
+
+set -eo pipefail
+
+log_file="$1"
+
+usage() {
+  echo "Usage: $0 <log-file>"
+}
+
+if [[ -z $log_file ]]; then
+  echo "------------------------------------------------"
+  usage
+  echo "------------------------------------------------"
+  echo " no log file provided, using the sample file..."
+  echo "------------------------------------------------"
+  log_file="sample.log"
+  sleep 2 
+fi
+
+
+declare -A error_counts
+
+while IFS= read -r line; do 
+  # skip commented or empty lines
+  [[ "$line" =~ ^# ]] || [[ -z "$line" ]] && continue
+
+  log_type="${line%%:*}"
+
+  error_counts["$log_type"]=$(( ${error_counts["$log_type"]:-0} + 1 ))
+done < "$log_file"
+
+echo "------------------Log Reporter------------------"
+for type in "${!error_counts[@]}"; do 
+  echo "$type: ${error_counts["$type"]}"
+done
