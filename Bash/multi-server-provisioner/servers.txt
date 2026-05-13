@@ -1,0 +1,15 @@
+# Add Servers here 
+
+# local containers (created with docker to test the script)
+localhost -p 2222
+localhost -p 3333
+localhost -p 4444
+
+#backend
+192.168.1.10
+192.168.1.20
+
+# frontend
+server1.com 
+web-app.com 
+

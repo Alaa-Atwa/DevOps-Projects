@@ -1,0 +1,28 @@
+#!/usr/bin/env bash 
+
+# commands to run on each server 
+
+echo "********** showing uptime **********"
+uptime 
+echo "************************************"
+sleep 3
+
+echo "*********** updating the  server ***********"
+sudo apt update  -qq
+echo "************************************"
+sleep 3
+
+echo "*********** installing tools ***************"
+sudo apt install -y ufw curl  
+echo "************************************"
+sleep 3
+
+sudo ufw status
+# you can set rules for ufw here
+
+echo "*********** adding new user *****************"
+sudo userdel deployuser  && sudo rm -rf /home/deployuser
+sudo useradd -m -s /bin/bash deployuser 
+echo "************************************"
+sleep 3 
+

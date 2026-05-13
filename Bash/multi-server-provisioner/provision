@@ -1,0 +1,63 @@
+#!/usr/bin/env bash 
+
+# strict mode 
+set -eo pipefail 
+
+servers="$1"
+user="$2"   # change the username for ssh here.
+declare -A errors   # logging errors into this list.
+
+usage() {
+  echo "Usage: $0 <servers-list> <ssh_user>"
+}
+
+# provision()
+
+# checks 
+if [[ -z "$servers" ]]; then 
+  echo "server list is empty!"
+  usage 
+  exit 1
+elif [[ -z "$user" ]]; then 
+  echo "you must provide ssh-user"
+  usage
+  exit 1
+elif [[ ! -f $servers ]]; then 
+  echo "please provide a valid file for server list"
+  exit 1
+fi 
+
+
+# first you need to use a ssh key to skip entering passwords everytime 
+# ssh-keygen 
+# ssh-copy-id -p <if-server uses different port> user@server 
+# you need to do this for every server.
+# -o StrictHostKeyChecking=no   is an option to skip confirming "do you trust..." everytime
+
+while IFS= read -r server; do
+  # skipping commented or empty lines 
+  if [[ "$server" =~ ^# || -z "$server" ]]; then 
+    continue 
+  fi
+  echo "======================================================="
+  echo "connecting to the server: $server ..."
+  echo "======================================================="
+  ssh $user@$server -o StrictHostKeyChecking=no < tasks &
+
+  status="$?"
+  if [[  ! "$status" -eq 0 ]]; then
+    errors[$server]= "Error connecting to this server"
+    continue
+  fi
+
+sleep 3
+  
+done < $servers
+
+
+wait    # wait for all background jobs to finish 
+
+# printing errors 
+for server in "${!errors[@]}"; do 
+  echo "$server : ${errors[$server]}"
+done
