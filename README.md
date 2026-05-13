@@ -1,6 +1,6 @@
 # 💻 DevOps Projects 
 
-This repository is a collection of hands-on DevOps projects covering core concepts, tools, and real-world workflows. It is structured to reflect a practical learning journey from fundamentals to production-level implementations.
+This repo is a collection of hands-on DevOps projects covering core concepts, tools, and real-world workflows. It is structured to reflect a practical learning journey from fundamentals to production-level implementations.
 
 ---
 
@@ -9,27 +9,29 @@ This repository is a collection of hands-on DevOps projects covering core concep
 Each directory contains multiple projects focused on a specific technology or domain.
 
 
-**1.Networking**
+### 1. Networking
 
 [mini-production-environment](./Networking/mini-production-environment/): networking lab built using Cisco Packet Tracer to simulate a simple production-like environment
 
-**2.bash** 
+---
 
-[healthy-server](./Bash/healthy-server/): system info reporter
+### 2. Bash
 
-**3.Docker**
+[multi-server-provisioner](./Bash/multi-server-provisioner/): provision a list of server running a list of commands on each server, all at ones 
 
-[express-app](./Docker/express-app/): simple express-app with docker-compose applied 
+[automate-backup](./Bash/automate-backup/): automate linux backup using rsync and systemd and healthcheck.io for monitoring
+
+[log-parser](./Bash/log-parser/): count error types inside a log file. 
+
+[healthy-server](./Bash/healthy-server/): a script that takes a list of servers from a file and check if they are up and running well using SSH.
+
+[auto-git](./Bash/auto-git/): automate git work from terminal including creating a new repo, adding files, commiting and more.
 
 ---
 
-## 🎯 Objective
+### 3. Docker
 
-The goal of this repository is to:
-
-* Build strong foundational knowledge in DevOps
-* Apply concepts through real-world projects
-* Develop production-ready skills
+[express-app](./Docker/express-app/): simple express-app with docker-compose applied 
 
 ---
 
@@ -46,20 +48,20 @@ Navigate to any project directory and follow its README instructions.
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 This is a personal learning repository, but suggestions and improvements are always welcome.
 
 ---
 
-## 📬 Contact
+## Contact
 
 If you have feedback or questions, feel free to reach out.
 https://www.linkedin.com/in/alaa-atwa-abd/
 
 ---
 
-## ⭐ Notes
+## Notes
 
 This repository represents a commitment to mastering DevOps through consistent, hands-on practice and real-world problem solving.
 
