@@ -1,0 +1,10 @@
+# build output
+bin/  
+
+# temporary files 
+obj/
+
+.gitignore
+
+
+
