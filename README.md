@@ -23,7 +23,7 @@ Each directory contains multiple projects focused on a specific technology or do
 
 [log-parser](./Bash/log-parser/): count error types inside a log file. 
 
-[healthy-server](./Bash/healthy-server/): a script that takes a list of servers from a file and check if they are up and running well using SSH.
+[healthy-server](./Bash/healthy-server/): take a list of servers from a file and check if they are up and running well using SSH.
 
 [auto-git](./Bash/auto-git/): automate git work from terminal including creating a new repo, adding files, commiting and more.
 
