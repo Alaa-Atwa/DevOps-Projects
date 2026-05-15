@@ -1,0 +1,45 @@
+services:
+  # mysql server for wordpress
+  mysql_database:
+    container_name: mysql-db
+    image: mysql:8.0
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_database:/var/lib/mysql
+    networks:
+      - wp_network
+
+  # wordpress
+  wordpress:
+    container_name: wordpress-app
+    depends_on:
+      - mysql_database
+    image: wordpress:6-apache
+    restart: always
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    environment:
+      WORDPRESS_DB_HOST: mysql_database
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - wp_network
+
+volumes:
+  wordpress:
+  mysql_database:
+
+networks:
+  wp_network:
