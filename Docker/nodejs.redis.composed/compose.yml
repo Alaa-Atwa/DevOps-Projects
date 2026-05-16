@@ -1,0 +1,11 @@
+services:
+  # redis
+  redis:
+    image: redis:alpine
+
+  node:
+    depends_on:
+      - redis
+    build: . # build from current Dockerfile
+    ports:
+      - "8080:8080"
