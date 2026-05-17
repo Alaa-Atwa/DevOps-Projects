@@ -1,0 +1,13 @@
+{
+  "name": "node-app",
+  "description": "simple express-app",
+  "authors": "alaa-atwa",
+  "version": "1.0.0",
+  "main": "home.js",
+  "dependencies": {
+    "express": "*"
+  },
+  "scripts": {
+    "start": "node home.js"
+  }
+}
