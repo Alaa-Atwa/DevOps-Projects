@@ -6,31 +6,9 @@ This project is a simple Node.js application built using Express and containeriz
 
 The app runs a basic web server (on port 4000) and demonstrates how to:
 
-* Package an application into a Docker image
-* Run the app inside a container
-* Ensure consistency across environments
-
 ---
 
-## ⚙️ Prerequisites
-
-Make sure you have installed:
-
-* Docker
-* Git
-
----
-
-## 📥 Clone the Repository
-
-```bash
-git clone https://github.com/Alaa-Atwa/DevOps-Projects.git
-cd DevOps-Projects/Docker/express-app
-```
-
----
-
-## 🐳 Build Docker Image
+## Build Docker Image
 
 ```bash
 docker build -t express-app .
@@ -39,7 +17,7 @@ docker build -t express-app .
 
 ---
 
-## ▶️ Run the Container
+## ️Run the Container
 
 ```bash
 docker run -d -p 4000:4000 --name express-container express-app
@@ -48,7 +26,7 @@ docker run -d -p 4000:4000 --name express-container express-app
 
 ---
 
-## 🌐 Access the Application
+## Access the Application
 
 Open your browser and go to:
 
@@ -67,5 +45,3 @@ You should see the app running.
 docker stop express-container
 docker rm express-container 
 ```
-
----
