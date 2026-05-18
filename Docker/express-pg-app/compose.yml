@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: pg_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: appdb
+
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  express-app:
+    build: .
+    container_name: note-app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://admin:secret@db:5432/appdb
+      PORT: 3000
+    depends_on:
+      - db
+
+volumes:
+  pg_data:

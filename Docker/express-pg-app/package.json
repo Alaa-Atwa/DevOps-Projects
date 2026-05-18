@@ -1,0 +1,14 @@
+{
+  "name": "notes-app",
+  "description": "add/list/delete notes",
+  "authors": "Alaa-Atwa",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "dependencies": {
+    "express": "*",
+    "pg": "*"
+  }, 
+  "scripts": {
+    "start": "node ./src/index.js"
+  }
+}
