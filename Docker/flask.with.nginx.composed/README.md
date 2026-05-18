@@ -14,7 +14,6 @@ http://localhost:8080
 http://localhost:8080/api/status
 
 ```
-
 ## compose down 
 ```bash 
 docker compose down 

@@ -1,6 +1,5 @@
 services:
-  node-app:
-    build: .
+  # mongo database
   mongo:
     image: mongo
     restart: always
@@ -9,6 +8,16 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: test_pass
+
+  # mongo-express
+  mongo-express:
+    image: mongo-express
+    restart: always
+  # node app
+  node-app:
+    depends_on:
+      - mongo
+    build: .
 
 volumes:
   mongo-db:
