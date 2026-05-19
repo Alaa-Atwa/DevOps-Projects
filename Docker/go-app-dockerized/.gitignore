@@ -1,0 +1,17 @@
+# Binaries
+server
+*.exe
+*.exe~
+*.out
+
+# Build directories
+bin/
+dist/
+
+# Logs
+*.log
+
+# environment variables
+.env
+
+
