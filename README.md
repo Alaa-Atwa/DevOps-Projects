@@ -33,6 +33,28 @@ Each directory contains multiple projects focused on a specific technology or do
 
 [express-app](./Docker/express-app/): simple express-app with docker-compose applied 
 
+[express-pg-app](./Docker/express-pg-app/): Express app with PostgreSQL database to add, list, and delete notes
+
+[Angular.dockerized](./Docker/Angular.dockerized/): Angular application with Docker setup and Nginx for serving the application
+
+[asp.net.dockerized](./Docker/asp.net.dockerized/): ASP.NET application Dockerized for containerized deployment
+
+[flask.mongo-express.composed](./Docker/flask.mongo-express.composed/): Flask application with MongoDB and Mongo-Express UI for database management
+
+[flask.with.nginx.composed](./Docker/flask.with.nginx.composed/): Flask application with Nginx as a reverse proxy for request routing
+
+[go-app-dockerized](./Docker/go-app-dockerized/): optimized Go application with minimal Docker image size using Alpine and scratch base images
+
+[nginx.loadBalancer](./Docker/nginx.loadBalancer/): Nginx load balancer with Node.js applications for distributed traffic handling
+
+[nodejs.mongodb.composed](./Docker/nodejs.mongodb.composed/): Express application with MongoDB for data persistence using Mongoose
+
+[nodejs.redis.composed](./Docker/nodejs.redis.composed/): Node.js web visits counter application using Redis for caching and counting
+
+[wordpress.with.mysql.composed](./Docker/wordpress.with.mysql.composed/): WordPress application with MySQL database orchestrated using docker-compose
+
+[full-stack-app-composed](./Docker/full-stack-app-composed/): complete full-stack application with multiple services orchestrated using docker-compose
+
 ---
 
 ## 🛠️ Usage
