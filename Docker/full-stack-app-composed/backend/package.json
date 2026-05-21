@@ -1,0 +1,17 @@
+{
+  "name": "todolist-app",
+  "description": "todo-list-app composed",
+  "authors": "Alaa Atwa",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "*",
+    "pg": "*",
+    "os": "*",
+    "cors": "*",
+    "express-rate-limit": "*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
